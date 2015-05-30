@@ -1,0 +1,33 @@
+#!/bin/bash
+[ -r bots/lunabot.cfg ] || cat >bots/lunabot.cfg <<-EOF
+	nick=Prinzessin_Luna
+	server=raspberrypi
+	port=6667
+	chans=( "#brgtest" )
+	pass=123456
+EOF
+
+source bots/lunabot.cfg
+
+send() {
+	echo "> $@" >&2;
+	printf "%s\r\n" "$@" >&3;
+}
+export -f send
+
+exec 3<>/dev/tcp/$server/$port || { echo "Connection failed"; exit 1; }
+
+send "NICK $nick"
+send "USER $nick 0 * :DrWeissbot"
+sleep 3
+send "PRIVMSG NickServ: IDENTIFY $pass"
+
+for chan in "${chans[@]}"; do
+	sleep 3
+	send "JOIN :$chan"
+	sleep 1
+	send "PRIVMSG $chan :WE ARE USING ROYAL CANTERLOT VOICE!"
+	sleep 30
+	send "quit :Goodnight, everypony!"
+	exit
+done

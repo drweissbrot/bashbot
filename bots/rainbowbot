@@ -1,0 +1,33 @@
+#!/bin/bash
+[ -r bots/rainbowbot.cfg ] || cat >bots/rainbowbot.cfg <<-EOF
+	nick=Rainbow_Dashie
+	server=raspberrypi
+	port=6667
+	chans=( "#brgtest" )
+	pass=123456
+EOF
+
+source bots/rainbowbot.cfg
+
+send() {
+	echo "> $@" >&2;
+	printf "%s\r\n" "$@" >&3;
+}
+export -f send
+
+exec 3<>/dev/tcp/$server/$port || { echo "Connection failed"; exit 1; }
+
+send "NICK $nick"
+send "USER $nick 0 * :DrWeissbot"
+sleep 3
+send "PRIVMSG NickServ: IDENTIFY $pass"
+
+for chan in "${chans[@]}"; do
+	sleep 3
+	send "JOIN :$chan"
+	sleep 1
+	send "PRIVMSG $chan :I AM 20 PERCENT COOLER THAN YOU, $USRNICK!"
+	sleep 30
+	send "quit :Gotta dash!"
+	exit
+done
