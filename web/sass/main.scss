@@ -1,0 +1,48 @@
+* {
+    font-family: 'Roboto', 'Open Sans', 'Calibri', Arial, Helvetica, sans-serif;
+}
+
+body {
+    margin-top: 25px;
+}
+
+.pgtitle {
+    margin-right: 2px;
+    line-height: 1.42857143;
+    border: 1px solid transparent;
+    border-radius: 4px 4px 0 0;
+    position: relative;
+    display: block;
+    padding: 10px 15px inherit 0px;
+    float: left;
+    font-weight: bold;
+}
+
+.row {
+    margin-bottom: 25px;
+}
+
+p {
+    text-align: justify;
+}
+
+ul#sachenmitoutput {
+    padding-left: 0;
+    line-height: 1.75em;
+    text-align: justify;
+
+    li {
+        font-family: 'Consolas', 'Source Code Pro', monospace;
+        display: inline;
+        margin-right: 15px;
+        padding: 2px 4px;
+        font-size: 90%;
+        color: #c7254e;
+        background-color: #f9f2f4;
+        border-radius: 4px;
+    }
+}
+
+ul.nav-tabs li.lnk {
+    float: right;
+}
