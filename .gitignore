@@ -1,2 +1,15 @@
-bashbot.config
-bashbot.pid
+# Bot
+/lcy.cfg
+lcy.pid
+
+# Secondary Bots
+/bots/lunabot.cfg
+/bots/rainbowbot.cfg
+
+# Web site
+*node_modules
+*/.sass-cache
+*.css
+
+# Other stuff
+/bak
