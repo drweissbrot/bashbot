@@ -1,0 +1,3 @@
+#!/bin/bash
+PHP=$(php cmd/php/stationinfo/dj.php)
+echo $PHP
