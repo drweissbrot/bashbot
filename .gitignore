@@ -8,8 +8,8 @@ lcy.pid
 
 # Web site
 *node_modules
-*/.sass-cache
-*.css
+*.cache
+/web/www/assets/c/*
 
 # Other stuff
 /bak

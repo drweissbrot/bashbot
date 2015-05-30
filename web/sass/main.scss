@@ -46,3 +46,33 @@ ul#sachenmitoutput {
 ul.nav-tabs li.lnk {
     float: right;
 }
+
+.cmd {
+    font-family: Consolas, 'Source Code Pro', monospace;
+    display: inline;
+    margin-right: 15px;
+    padding: 2px 0;
+    font-size: 150%;
+    color: #c7254e;
+    background-color: #f9f2f4;
+    border-radius: 4px;
+}
+
+footer {
+    color: gray;
+    font-size: 90%;
+
+    a:link,
+    a:visited {
+        color: inherit;
+    }
+
+    .left {
+        float: left;
+    }
+
+    .right {
+        float: right;
+        text-align: right;
+    }
+}
