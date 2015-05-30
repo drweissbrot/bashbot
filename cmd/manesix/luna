@@ -1,0 +1,17 @@
+#!/bin/bash
+quotes=(
+    "Ich rufe mal an..."
+    "BE STILL!"
+    "WE ARE USING CAPS LOCK!" # Hint Hint [at] MorBen
+    "Haha, the fun has been doubled!"
+    "Goodnight everypony!"
+    "♫ Come Little Children, I'll Take Thee Away, Into A Land Of Enchantment... ♫" # Come Little Children, The Time's Come To Play, Here In My Garden Of Shadows
+)
+
+quote=${quotes[$((RANDOM % ${#quotes[@]}))]}
+
+if [ "$quote" = "Ich rufe mal an..." ]; then
+    bash bots/lunabot
+else
+    echo "$quote"
+fi

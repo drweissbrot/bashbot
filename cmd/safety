@@ -1,0 +1,50 @@
+#!/bin/bash
+NOTOK=(
+    "nazi"
+    "nigger"
+    "nigga"
+)
+
+IGNOREJOIN=(
+    "twinkle"
+)
+
+case "$@" in
+    "JOIN "*)
+        for i in "${NOTOK[@]}"; do
+            if [[ ${NAME,,} == *"$i"* ]]; then
+                send "KICK $CHANNEL $NAME :Das sagt man aber nicht!"
+                echo "$NAME wurde gekickt!"
+                exit
+            fi
+
+            for i in "${IGNOREJOIN[@]}"; do
+                if [[ "$i" == *${NAME,,}* ]]; then
+                    echo "$NAME möchte nicht gegrüßt werden."
+                    exit
+                fi
+            done
+        done
+
+        send "PRIVMSG $CHANNEL :Hallo, $NAME!"
+    ;;
+    "NICK "*)
+        NAME=${@,,}
+        NAME=${NAME#nick }
+
+        for i in "${NOTOK[@]}"; do
+            if [[ ${@,,}* == "nick "*"$i"* ]]; then
+                send "KICK $CHANNEL $NAME :Das sagt man aber nicht!"
+                echo "$NAME wurde gekickt!"
+            fi
+        done
+    ;;
+    "PRIVMSG "*)
+        for i in "${NOTOK[@]}"; do
+            if [[ ${@,,}* == "privmsg ${CHANNEL,,} :"*"$i"* ]]; then
+                send "KICK $CHANNEL $NAME :Das sagt man aber nicht!"
+                echo "$NAME wurde gekickt!"
+            fi
+        done
+    ;;
+esac

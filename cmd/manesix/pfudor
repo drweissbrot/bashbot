@@ -1,0 +1,7 @@
+#!/bin/bash
+quotes=(
+    "♫ Pink Fluffy Unicorns Dancing On Rainbows... ♫"
+	"http://pfudor.tk (Schleichwerbung!)"
+)
+
+echo ${quotes[$((RANDOM % ${#quotes[@]}))]}

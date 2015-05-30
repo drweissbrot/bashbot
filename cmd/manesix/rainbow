@@ -1,0 +1,21 @@
+#!/bin/bash
+quotes=(
+    "Ich rufe mal an..."
+	"OH MY GOSH! OH MY GOSH! OH MY GOSH!"
+	"I'll be lucky if I ever fly again!"
+	"Ten seconds flat!"
+	"And SO AM I! WOO HOO!"
+	"Dun dun dun!"
+	"http://goo.gl/kGFkGH"
+	"http://goo.gl/QGaUZ1"
+	"http://goo.gl/FGLDGM"
+	"http://goo.gl/N6GpYw"
+)
+
+quote=${quotes[$((RANDOM % ${#quotes[@]}))]}
+
+if [ "$quote" = "Ich rufe mal an..." ]; then
+    USRNICK=$NAME bash bots/rainbowbot
+else
+    echo "$quote"
+fi

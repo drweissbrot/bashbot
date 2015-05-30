@@ -1,0 +1,12 @@
+#!/bin/bash
+quotes=(
+    "Hi Sugarcube!"
+    "Want an Apple?"
+    "Apples to the Core!"
+    "YEEEEHAAAAAW!"
+    "http://goo.gl/P8mKs9"
+    "http://goo.gl/18KzFZ"
+    "http://goo.gl/sWn07a"
+)
+
+echo ${quotes[$((RANDOM % ${#quotes[@]}))]}

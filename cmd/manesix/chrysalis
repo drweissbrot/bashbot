@@ -1,0 +1,6 @@
+#!/bin/bash
+quotes=(
+    "[laughing] You can run, but you can't hide!"
+)
+
+echo ${quotes[$((RANDOM % ${#quotes[@]}))]}

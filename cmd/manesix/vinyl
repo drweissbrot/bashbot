@@ -1,0 +1,8 @@
+#!/bin/bash
+quotes=(
+    "I am vinylicious!"
+	"Drop that bass!"
+	"Wub Wub Wub"
+)
+
+echo ${quotes[$((RANDOM % ${#quotes[@]}))]}

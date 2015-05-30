@@ -1,0 +1,8 @@
+#!/bin/bash
+quotes=(
+    "Rock. You are a rock. Gray. You are gray. Like a rock. Which you are. Rock."
+    "His name is Boulder."
+    "Boulder was hungry."
+)
+
+echo ${quotes[$((RANDOM % ${#quotes[@]}))]}

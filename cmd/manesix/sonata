@@ -1,0 +1,7 @@
+#!/bin/bash
+quotes=(
+    "It's Taco Tuesday!"
+	"For realsies?"
+)
+
+echo ${quotes[$((RANDOM % ${#quotes[@]}))]}

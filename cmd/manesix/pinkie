@@ -1,0 +1,13 @@
+#!/bin/bash
+quotes=(
+    "Cross my heart and hope to fly, stick a cupcake in my eye!"
+    "Fun... is hard!"
+    "Sparkleriffic!"
+    "COME ON, BONELESS! Give us that Key!"
+    "I'm so nervouscited!"
+    "Nopony breaks a pinky promise!"
+    "Well, duh!"
+    "Pinkie Pie Style!"
+)
+
+echo ${quotes[$((RANDOM % ${#quotes[@]}))]}

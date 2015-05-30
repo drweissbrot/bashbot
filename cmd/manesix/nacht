@@ -1,0 +1,6 @@
+#!/bin/bash
+quotes=(
+    "Möge Luna über deine Träume wachen. http://goo.gl/d6yGIL"
+)
+
+echo ${quotes[$((RANDOM % ${#quotes[@]}))]}

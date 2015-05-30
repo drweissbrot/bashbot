@@ -1,0 +1,7 @@
+#!/bin/bash
+quotes=(
+    "#Biermus? Hmmm, lecker..."
+    "#Biermus? Das Zeug, mit dem Jaster Cabraloca vergiftet hat?"
+)
+
+echo ${quotes[$((RANDOM % ${#quotes[@]}))]}

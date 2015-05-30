@@ -1,0 +1,6 @@
+#!/bin/bash
+quotes=(
+    "http://goo.gl/LlNoo4"
+)
+
+echo ${quotes[$((RANDOM % ${#quotes[@]}))]}
