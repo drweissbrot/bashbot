@@ -1,8 +1,7 @@
 #!/bin/bash
 quotes=(
     "http://goo.gl/ohf3nn"
-	"http://bit.ly/1MZSfQm"
-	"Chabos wissen wer der Babo ist!"
+    "http://bit.ly/1MZSfQm"
 )
 
 echo ${quotes[$((RANDOM % ${#quotes[@]}))]}
