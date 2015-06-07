@@ -18,13 +18,13 @@
     $response = curl_exec($ch);
     curl_close($ch);
 
-    $jsonArray = json_decode($response, true);
+    $json = json_decode($response, true);
 
-	$currevent["title"] = $jsonArray['result'][0]['title'];
-    $currevent["start_time"] = $jsonArray['result'][0]['start_time'];
+	$currevent["title"] = $json['result'][0]['title'];
+    $currevent["start_time"] = $json['result'][0]['start_time'];
     $currevent["time_human"] = date("d.m.Y H:i", $currevent["start_time"]);
 
-    $nextevent["title"] = $jsonArray['result'][1]['title'];
-    $nextevent["start_time"] = $jsonArray['result'][1]['start_time'];
+    $nextevent["title"] = $json['result'][1]['title'];
+    $nextevent["start_time"] = $json['result'][1]['start_time'];
     $nextevent["time_human"] = date("d.m.Y H:i", $nextevent["start_time"]);
 ?>
