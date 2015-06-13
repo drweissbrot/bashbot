@@ -95,6 +95,7 @@ while read -r line; do
 	esac
 
 	# Before anything else: Check if message / command is ok
+	CHANNEL=${2#:}
 	cmd/safety "$@"
 
 	case "$@" in
