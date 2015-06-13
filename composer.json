@@ -1,0 +1,14 @@
+{
+    "name": "drweissbrot/lcy",
+    "description": "Brony Radio Germany's IRC bot",
+    "require": {
+        "jublonet/codebird-php": "^2.7"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Pierre Borgmann",
+            "email": "drweissbrot@outlook.com"
+        }
+    ]
+}

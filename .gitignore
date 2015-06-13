@@ -13,3 +13,10 @@ lcy.pid
 
 # Other stuff
 /bak
+
+# Composer
+/vendor/
+composer.lock
+
+# Private Keys
+config.json

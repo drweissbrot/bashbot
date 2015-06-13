@@ -1,0 +1,16 @@
+{
+    "twitter":{
+        "consumer": {
+            "key": "Your Consumer Key (API Key) here",
+            "secret": "Yout Consumer Secret (API Secret) here"
+        },
+        "access": {
+            "token": "Your Access Token here",
+            "secret": "Your Access Token Secret here"
+        }
+    },
+    "command3": {
+        "onair": "Whatever you want to be executed in the shell. (I'll keep this my little secret.)",
+        "offair": "The same, just when performing offair."
+    }
+}
