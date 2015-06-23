@@ -35,7 +35,6 @@ filter() {
 export -f filter
 
 run_filters() {
-	echo "${@,,}"
 	for f in "${!filters[@]}"; do
 		if [[ "${@,,}" =~ "${f,,}" ]]; then
 			for func in ${filters[$f]}; do
