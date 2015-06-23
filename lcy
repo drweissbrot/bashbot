@@ -35,8 +35,9 @@ filter() {
 export -f filter
 
 run_filters() {
+	echo "${@,,}"
 	for f in "${!filters[@]}"; do
-		if [[ "${@,,}" =~ $f ]]; then
+		if [[ "${@,,}" =~ "${f,,}" ]]; then
 			for func in ${filters[$f]}; do
 				$func "${BASH_REMATCH[@]}"
 			done
@@ -62,7 +63,8 @@ exec 3<>/dev/tcp/$server/$port || { echo "Connection failed"; exit 1; }
 send "NICK $nick"
 send "USER $nick 0 * :DrWeissbot"
 sleep 3
-send "PRIVMSG NickServ: IDENTIFY $pass"
+send "PRIVMSG NickServ :IDENTIFY $pass"
+send "PRIVMSG HostServ OFF"
 
 for chan in "${chans[@]}"; do
 	sleep 3
@@ -109,7 +111,7 @@ while read -r line; do
 		prefix="PRIVMSG $NAME "
 		set -- "${3#:}" "${@:4}"
 		;;
-		"PRIVMSG "*" :$nick, "*)
+		"PRIVMSG "*" :$nick: "*)
 		CHANNEL=$2
 		prefix="PRIVMSG $CHANNEL :$NAME"
 		set -- "${@:4}"

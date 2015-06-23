@@ -20,7 +20,7 @@ exec 3<>/dev/tcp/$server/$port || { echo "Connection failed"; exit 1; }
 send "NICK $nick"
 send "USER $nick 0 * :DrWeissbot"
 sleep 3
-send "PRIVMSG NickServ: IDENTIFY $pass"
+send "PRIVMSG NickServ :IDENTIFY $pass"
 
 for chan in "${chans[@]}"; do
 	sleep 3
