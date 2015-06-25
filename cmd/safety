@@ -1,8 +1,16 @@
 #!/bin/bash
 NOTOK=(
+    "anal"
+    "fag"
+    "fick"
+    "fuck"
+    "gay"
+    "hitler"
     "nazi"
-    "nigger"
     "nigga"
+    "nigger"
+    "penis"
+    "schwul"
 )
 
 IGNOREJOIN=(
