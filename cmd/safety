@@ -1,7 +1,6 @@
 #!/bin/bash
 NOTOK=(
     "anal"
-    "fag"
     "fick"
     "fuck"
     "gay"
@@ -15,6 +14,7 @@ NOTOK=(
 
 IGNOREJOIN=(
     "twinkle"
+	"lucy_light"
 )
 
 case "$@" in
@@ -42,14 +42,6 @@ case "$@" in
 
         for i in "${NOTOK[@]}"; do
             if [[ ${@,,}* == "nick "*"$i"* ]]; then
-                send "KICK $CHANNEL $NAME :Das sagt man aber nicht!"
-                echo "$NAME wurde gekickt!"
-            fi
-        done
-    ;;
-    "PRIVMSG "*)
-        for i in "${NOTOK[@]}"; do
-            if [[ ${@,,}* == "privmsg ${CHANNEL,,} :"*"$i"* ]]; then
                 send "KICK $CHANNEL $NAME :Das sagt man aber nicht!"
                 echo "$NAME wurde gekickt!"
             fi
