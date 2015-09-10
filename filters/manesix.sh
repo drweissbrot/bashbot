@@ -123,20 +123,14 @@ filter 'lucy_light, derpy' derpy
 filter 'lucy_light, fluttershy' fluttershy
 filter 'lucy_light, luna' luna
 filter 'lucy_light, maud' maud
-filter 'lucy_light, maud pie' maud
 filter 'lucy_light, octavia' octavia
 filter 'lucy_light, pinkie' pinkie
-filter 'lucy_light, pinkie pie' pinkie
 filter 'lucy_light, rainbow' rainbow
-filter 'lucy_light, rainbow dash' rainbow
 filter 'lucy_light, rarity' rarity
 filter 'lucy_light, sonata' sonata
-filter 'lucy_light, sonata dusk' sonata
 filter 'lucy_light, spitfire' spitfire
 filter 'lucy_light, twilight' twilight
-filter 'lucy_light, twilight sparkle' twilight
 filter 'lucy_light, vinyl' vinyl
-filter 'lucy_light, vinyl scratch' vinyl
 
 # Stuff
 filter 'lucy_light, biermus' biermus
@@ -152,7 +146,6 @@ filter 'lucy_light, pfudor' pfudor
 filter 'lucy_light, jaster' jaster
 filter 'lucy_light, pierre' pierre
 filter 'lucy_light, prot' pierre
-filter 'lucy_light, PRot' pierre
 filter 'lucy_light, top bat' topbat
 filter 'lucy_light, top_bat' topbat
 filter 'lucy_light, twinkle' twinkle
