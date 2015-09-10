@@ -144,10 +144,10 @@ while read -r line; do
 	if [ -n "${builtin_commands[$cmd]}" ]; then
 		"${builtin_commands[$cmd]}" "$@"
 		continue
-	elif [ -x "query/$cmd" ]; then
-		"query/$cmd" "$@"
+	elif [ -x "cmd/query/$cmd" ]; then
+		"cmd/query/$cmd" "$@"
 	else
-		"query/insult"
+		"cmd/query/insult"
 	fi | while IFS= read -r line; do
 		send "$prefix:$line"
 	done&
