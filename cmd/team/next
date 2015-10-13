@@ -1,0 +1,33 @@
+#!/bin/bash
+send "PRIVMSG PR-Pierre :next -- $NAME ($HOST) in $CHANNEL"
+
+status=$(php cmd/php/team/check-echo.php --host $HOST)
+started=$(php cmd/php/team/onair/started.php)
+currevent=$(php cmd/php/team/onair/currevent.php)
+
+if [[ "$status" == 'true' ]]; then
+    if [[ "$started" == 'Derzeit ist keine Sendung aktiv.' ]]; then
+		send "PRIVMSG PR-Pierre :next abgeleht: Keine Sendung aktiv"
+        echo "Derzeit ist keine Sendung aktiv."
+    else
+		send "PRIVMSG PR-Pierre :next akzeptiert"
+		echo "Beende..."
+
+		offair=$(php cmd/php/team/offair.php)
+        echo $offair
+
+		echo "Going live: $currevent ($NAME)"
+
+        onair1=$(php cmd/php/team/onair/1.php)
+        echo $onair1
+        onair2=$(php cmd/php/team/onair/2.php)
+        echo $onair2
+
+        send "TOPIC #brony_radio_germany :Chat des Brony Radio Germanys / Chatregeln: http://pvlive.me/brgchat / TS3-Server: 85.214.218.195:9988 / Keine Spoiler! / On Air: $currevent"
+
+        onair3=$(php cmd/php/team/onair/3.php)
+    fi
+else
+    send "PRIVMSG PR-Pierre :next abgeleht: Nicht berechtigt"
+    echo "Du bist nicht berechtigt, dieses Kommando auszuführen."
+fi

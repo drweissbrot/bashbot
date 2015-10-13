@@ -7,6 +7,10 @@ offair() {
     bash cmd/team/offair
 }
 
+next() {
+	bash cmd/team/next
+}
+
 dj() {
     bash cmd/info/dj
 }
@@ -25,6 +29,7 @@ cmdlist() {
 
 filter 'lucy_light, onair' onair
 filter 'lucy_light, offair' offair
+filter 'lucy_light, next' next
 
 filter 'lucy_light, dj' dj
 filter 'lucy_light, song' song
