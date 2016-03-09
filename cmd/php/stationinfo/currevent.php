@@ -1,22 +1,11 @@
 <?php
-	/* Output:
-		$autodj (bool)
-		$currevent["title"] ["start_time"] ["time_human"]
-		$nextevent["title"] ["start_time"] ["time_human"]
-	*/
-    $date = date_create();
-    $time = date_timestamp_get($date);
     date_default_timezone_set('Europe/Berlin');
+	$time = time();
 
-    $nowunix = $time;
+    $nowunix = $time + 900;
     $endtime = 2147483647; //Last UNIX timestamp
 
-    $ch = curl_init();
-    curl_setopt($ch, CURLOPT_URL, "http://api.ponyvillelive.com/schedule/index/station/brony_radio_germany/start/$nowunix/end/$endtime");
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
-    curl_setopt($ch, CURLOPT_HEADER, FALSE);
-    $response = curl_exec($ch);
-    curl_close($ch);
+	$response = file_get_contents("https://api.ponyvillelive.com/schedule/index/station/brony_radio_germany/start/$nowunix/end/$endtime");
 
     $json = json_decode($response, true);
 
